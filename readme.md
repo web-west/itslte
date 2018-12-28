@@ -12,7 +12,8 @@ $ npm run prod или npm run dev // для генерации скриптов 
 
 Копируем ```./webpack-example/webpack.mix.itslte.js``` в директорию родителя
 ```
-$ cp ./webpack-laravel/webpack.mix.itslte.js ../
+$ cp ./webpack-example/webpack.mix.itslte.js ../
+$ cd ../
 ```
 Добавляем в Laravel поддержку этого файла, в файл webpack.mix.js вставляем строки 
 
@@ -32,7 +33,7 @@ if (process.env.section) {
 
 Стили:
 ```
-<link rel="stylesheet" href="{{ asset('public/its-lte/css/its-admin.css') }}">
+<link rel="stylesheet" href="{{ asset('its-lte/css/its-admin.css') }}">
 ```
 
 Скрыпты:
@@ -107,11 +108,11 @@ if (process.env.section) {
       }
 </script>
 
-<script src="{{ asset('public/its-lte/js/its-plugins.js') }}"></script>
-<script src="{{ asset('public/its-lte/vendor/ckeditor/ckeditor.js') }}"></script>
-<script src="{{ asset('public/its-lte/vendor/ckeditor/adapters/jquery.js') }}"></script>
+<script src="{{ asset('its-lte/js/its-plugins.js') }}"></script>
+<script src="{{ asset('its-lte/vendor/ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('its-lte/vendor/ckeditor/adapters/jquery.js') }}"></script>
 
-<script src="{{ asset('public/its-lte/js/its-admin.js') }}"></script>
+<script src="{{ asset('its-lte/js/its-admin.js') }}"></script>
 
 <script>
   $.widget.bridge('uibutton', $.ui.button);
