@@ -1,0 +1,10 @@
+/bower_components
+/node_modules
+npm-debug.log
+.htpasswd
+/.idea
+/.vscode
+/.vagrant
+_ide_helper.php
+/dist
+mix-manifest.json

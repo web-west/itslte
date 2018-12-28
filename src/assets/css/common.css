@@ -1,0 +1,68 @@
+ul.todo-list {
+    list-style: none;
+}
+
+ul.todo-list ul {
+    list-style: none;
+}
+
+ul.todo-list ul li {
+    padding: 10px 0 0 0;
+}
+
+ul.todo-list li.dragged {
+    position: absolute;
+    top: 0;
+    opacity: 0.8;
+    z-index: 2000;
+}
+ul.todo-list li.placeholder {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+    min-height: 30px;
+}
+ul.todo-list li.placeholder:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    margin-top: -5px;
+    left: -5px;
+    top: 50%;
+    border: 5px solid transparent;
+    border-left-color: red;
+    border-right: none;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    font-size: 14px;
+}
+
+.invoice {
+    margin: 10px 15px;
+}
+
+.field-select2-change-status-ajax {
+    position: relative;
+}
+
+.tree-sortable li:hover {
+    background: #d2d2d2;
+    outline: #d2d2d2 dashed 1px;
+}
+
+.tree-sortable li li:hover {
+    background:     #a9a8a8;
+}
+
+.tree-sortable li li li:hover {
+    background:     #868686;
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
