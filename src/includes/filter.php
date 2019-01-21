@@ -34,10 +34,18 @@
                         <label>Обновлено за период:</label>
 
                         <div class="input-group">
-                        <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                        </div>
-                        <input name="updatet_at" type="text" class="form-control pull-right lte-daterangepicker">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input name="range"
+                                   autocomplete="off"
+                                   type="text"
+                                   class="form-control pull-right lte-daterangepicker"
+                                   data-input-name-start="start_at"
+                                   data-input-name-end="end_at"
+                            >
+                            <input type="hidden" name="start_at" value="">
+                            <input type="hidden" name="end_at" value="">
                         </div>
                     </div>
                 </div>
