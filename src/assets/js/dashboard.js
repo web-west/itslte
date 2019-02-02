@@ -340,12 +340,14 @@ $(function () {
             fieldName = $(this).parents('.field-links').data('field-name'),
             keyKey = $(this).parents('.field-links').data('key'),
             keyValue = $(this).parents('.field-links').data('value'),
+            placeholderKey = $(this).parents('.field-links').data('placeholder-key'),
+            placeholderValue = $(this).parents('.field-links').data('placeholder-value'),
             item = '<tr class="item">'
                       + '<td>'
                           + '<div class="input-group input-group-md">'
-                              + '<input type="text" name="' + fieldName + '[' + (length) + '][' + keyKey + ']" class="form-control" placeholder="Назва">'
-                              + '<span class="input-group-btn" style="width: 40%">'
-                                  + '<input type="text" name="' + fieldName + '[' + (length) + '][' + keyValue + ']" class="form-control" placeholder="Значення">'
+                          + '<input type="text" name="' + fieldName + '[' + (length) + '][' + keyKey + ']" class="form-control" placeholder="' + placeholderKey + '">'
+                          + '<span class="input-group-btn" style="width: 40%">'
+                          + '<input type="text" name="' + fieldName + '[' + (length) + '][' + keyValue + ']" class="form-control" placeholder="' + placeholderValue + '">'
                               + '</span>'
                               + '<span class="input-group-btn">'
                                   + '<button type="button" class="btn btn-info btn-flat">'
