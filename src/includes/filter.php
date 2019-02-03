@@ -52,7 +52,12 @@
             </div>
         </div>
         <div class="box-footer">
-            <button type="submit" class="btn btn-sm btn-success pull-right">Фильтр</button>
+            <div class="form-buttons pull-right ">
+                <div role="group" class="btn-group">
+                    <a href="#" class="btn btn-sm btn-default">Сбросить</a>
+                    <button type="submit" class="btn btn-sm btn-success">Применить</button>
+                </div>
+            </div>
         </div>
     </div>
 </section>

@@ -4,11 +4,18 @@ $(function () {
 
  const LANGUAGE = $('html').attr('lang') || 'ru'
 
-  $(document).ajaxStart(function() { 
-    Pace.restart() 
+  $(document).ajaxStart(function() {
+    Pace.restart()
   })
 
   $(document).ready(function () {
+
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+
     $('.field-select2-change-status-ajax').each(function () {
       var $base = $(this),
           $select = $base.find('.select2-change-status-ajax'),
@@ -17,7 +24,7 @@ $(function () {
             language: LANGUAGE,
             tags: false
           })
-      
+
       $select2.on("select2:select", function (e) {
         $base.find('.overlay').removeClass('hidden')
 
@@ -119,14 +126,11 @@ $(function () {
         }
       })
 
-      
     })
 
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+    if ($('.field-x-editable').length) {
+        $('.field-x-editable').editable(xEditable || {});
+    }
 
     $('.js-delete-action').on('click', function(e) {
         e.preventDefault()
@@ -137,24 +141,28 @@ $(function () {
         }
     })
 
-    $('.select2:not(.field-select-ajax):not(.sortable)').select2({
-      language: 'ru',
-      tags: false
-    })
+    if ($('.select2:not(.field-select-ajax):not(.sortable)').length) {
+        $('.select2:not(.field-select-ajax):not(.sortable)').select2({
+            language: 'ru',
+            tags: false
+        })
+    }
 
-    $('.select2.sortable').select2({
-      language: 'ru',
-      tags: true
-    })
+    if ($('.select2.sortable').length) {
+        $('.select2.sortable').select2({
+        language: 'ru',
+        tags: true
+        })
 
-    $('.select2.sortable').on("select2:select", function (evt) {
-      var element = evt.params.data.element
-      var $element = $(element)
-      
-      $element.detach()
-      $(this).append($element)
-      $(this).trigger("change")
-    })
+        $('.select2.sortable').on("select2:select", function (evt) {
+            var element = evt.params.data.element
+            var $element = $(element)
+
+            $element.detach()
+            $(this).append($element)
+            $(this).trigger("change")
+        })
+    }
 
     if($('.select2.field-select-ajax').length) {
       $('.select2.field-select-ajax').each(function (index) {
@@ -170,7 +178,7 @@ $(function () {
           }
         })
       })
-      
+
     }
 
     $('.lte-daterangepicker').each(function () {
@@ -178,14 +186,14 @@ $(function () {
         $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'))
         var $inputNameStart = $(this).data('input-name-start'),
             $inputNameEnd = $(this).data('input-name-end')
-        $(this).siblings('input[name='+$inputNameStart+']').val(picker.startDate.format('MM/DD/YYYY'))
-        $(this).siblings('input[name='+$inputNameEnd+']').val(picker.endDate.format('MM/DD/YYYY'))
+          $(this).siblings('input[name="'+$inputNameStart+'"]').val(picker.startDate.format('MM/DD/YYYY'))
+          $(this).siblings('input[name="'+$inputNameEnd+'"]').val(picker.endDate.format('MM/DD/YYYY'))
       })
-  
+
       $(this).on('cancel.daterangepicker', function(ev, picker) {
         $(this).val('')
       })
-      
+
       $(this).daterangepicker({
         autoUpdateInput: false,
         "locale": translates.localeDateRangePicker || {
@@ -225,18 +233,13 @@ $(function () {
       })
     })
 
-    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-      checkboxClass: 'icheckbox_minimal-blue',
-      radioClass   : 'iradio_minimal-blue'
-    })
-    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-      checkboxClass: 'icheckbox_minimal-red',
-      radioClass   : 'iradio_minimal-red'
-    })
-    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-      checkboxClass: 'icheckbox_flat-green',
-      radioClass   : 'iradio_flat-green'
-    })
+    if ($('input[type="checkbox"]').length) {
+        $('input[type="checkbox"]').addClass('checkbox')
+    }
+
+    if ($('input[type="radio"]').length) {
+        $('input[type="radio"]').addClass('radio')
+    }
 
     $('[data-toggle="tooltip"]').tooltip()
 
@@ -304,7 +307,7 @@ $(function () {
         }
       })
     })
-    
+
     if ($('#revenue-chart').length) {
       var area = new Morris.Area({
         element   : 'revenue-chart',
@@ -330,9 +333,12 @@ $(function () {
         hideHover : 'auto'
       })
     }
-
-    $('textarea.ck-editor.ck-small').ckeditor(ckSmall || {})
-    $('textarea.ck-editor.ck-full').ckeditor(ckFull || {})
+    if ($('textarea.ck-editor.ck-small').length) {
+        $('textarea.ck-editor.ck-small').ckeditor(ckSmall || {})
+    }
+    if ($('textarea.ck-editor.ck-full').length) {
+        $('textarea.ck-editor.ck-full').ckeditor(ckFull || {})
+    }
 
     if ($('.field-links').length) {
       $('.field-links').on('click', '.btn-info', function (e) {
@@ -369,7 +375,7 @@ $(function () {
       $('.field-links').on('click', '.btn-danger', function (e) {
         e.preventDefault()
         var n = $(this).parents('.field-links').find('.btn-danger:not(.first)').index(this)
-        
+
         $(this).parents('.field-links').find('.item').eq(n).remove()
       })
     }
