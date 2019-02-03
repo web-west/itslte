@@ -246,9 +246,11 @@ $(function () {
           url = $this.data('url'),
           entity = $this.data('entity')
 
-      $($this.data('target')).find('form').attr('action', url)
+        if (url) {
+            $($this.data('target')).find('form').attr('action', url)
+        }
 
-      for (var field in entity) {
+        for (var field in entity) {
           $($this.data('target')).find('[name="' + field + '"]').val(entity[field]);
       }
 
