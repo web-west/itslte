@@ -178,8 +178,8 @@ $(function () {
         $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'))
         var $inputNameStart = $(this).data('input-name-start'),
             $inputNameEnd = $(this).data('input-name-end')
-        $(this).siblings('input[name='+$inputNameStart+']').val(picker.startDate.format('MM/DD/YYYY'))
-        $(this).siblings('input[name='+$inputNameEnd+']').val(picker.endDate.format('MM/DD/YYYY'))
+          $(this).siblings('input[name="'+$inputNameStart+'"]').val(picker.startDate.format('MM/DD/YYYY'))
+          $(this).siblings('input[name="'+$inputNameEnd+'"]').val(picker.endDate.format('MM/DD/YYYY'))
       })
   
       $(this).on('cancel.daterangepicker', function(ev, picker) {
