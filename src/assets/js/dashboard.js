@@ -330,9 +330,12 @@ $(function () {
         hideHover : 'auto'
       })
     }
-
-    $('textarea.ck-editor.ck-small').ckeditor(ckSmall || {})
-    $('textarea.ck-editor.ck-full').ckeditor(ckFull || {})
+    if ($('textarea.ck-editor.ck-small').length) {
+        $('textarea.ck-editor.ck-small').ckeditor(ckSmall || {})
+    }
+    if ($('textarea.ck-editor.ck-full').length) {
+        $('textarea.ck-editor.ck-full').ckeditor(ckFull || {})
+    }
 
     if ($('.field-links').length) {
       $('.field-links').on('click', '.btn-info', function (e) {
