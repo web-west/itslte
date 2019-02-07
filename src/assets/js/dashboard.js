@@ -333,6 +333,7 @@ $(function () {
       })
     }
 
+    $('textarea.ck-editor.ck-mini').ckeditor(ckMini || {})
     $('textarea.ck-editor.ck-small').ckeditor(ckSmall || {})
     $('textarea.ck-editor.ck-full').ckeditor(ckFull || {})
 

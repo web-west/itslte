@@ -40,6 +40,14 @@ if (process.env.section) {
 ```
 <script>
   var 
+      ckMini = {
+        language: 'ru',
+        toolbar: [
+          { name: 'paragraph', items : [ 'NumberedList','BulletedList', 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
+          { name: 'links', items : [ 'Link','Image','Anchor' ] },
+          { name: 'colors', items : [ 'TextColor','BGColor' ] },
+        ]
+      },
       ckSmall = {
         language: 'ru',
         toolbar: [
