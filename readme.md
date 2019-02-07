@@ -70,6 +70,7 @@ if (process.env.section) {
         ],
         labels: ['Нові', 'Підтверджені']
       },
+      xEditable = {},
       translates = {
         localeDateRangePicker: {
           "format": "MM/DD/YYYY",

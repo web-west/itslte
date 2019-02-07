@@ -32,6 +32,7 @@
         ],
         labels: ['Нові', 'Підтверджені']
       },
+      xEditable = {},
       translates = {
         localeDateRangePicker: {
           "format": "MM/DD/YYYY",

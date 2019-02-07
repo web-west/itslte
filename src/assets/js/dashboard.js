@@ -9,6 +9,13 @@ $(function () {
   })
 
   $(document).ready(function () {
+
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+
     $('.field-select2-change-status-ajax').each(function () {
       var $base = $(this),
           $select = $base.find('.select2-change-status-ajax'),
@@ -119,14 +126,9 @@ $(function () {
         }
       })
 
-
     })
 
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+    $('.field-x-editable').editable(xEditable || {});
 
     $('.js-delete-action').on('click', function(e) {
         e.preventDefault()
