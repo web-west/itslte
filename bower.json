@@ -58,7 +58,6 @@
     "Ionicons": "ionicons#^2.0.1",
     "jquery-ui": "1.11.4",
     "jquery-sortable": "johnny/jquery-sortable#^0.9.13",
-    "iCheck": "fronteed/icheck#^1.0.2",
     "bootstrap-treeview": "^1.2.0",
     "select2-to-tree": "clivezhg/select2-to-tree#^1.1.1",
     "ckeditor": "#full/stable",

@@ -128,7 +128,9 @@ $(function () {
 
     })
 
-    $('.field-x-editable').editable(xEditable || {});
+    if ($('.field-x-editable').length) {
+        $('.field-x-editable').editable(xEditable || {});
+    }
 
     $('.js-delete-action').on('click', function(e) {
         e.preventDefault()
@@ -231,19 +233,12 @@ $(function () {
       })
     })
 
-    if ($('input[type="checkbox"].minimal').length && $('input[type="radio"].minimal').length) {
-        $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-            checkboxClass: 'icheckbox_minimal-blue',
-            radioClass   : 'iradio_minimal-blue'
-        })
-        $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-            checkboxClass: 'icheckbox_minimal-red',
-            radioClass   : 'iradio_minimal-red'
-        })
-        $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-            checkboxClass: 'icheckbox_flat-green',
-            radioClass   : 'iradio_flat-green'
-        })
+    if ($('input[type="checkbox"]').length) {
+        $('input[type="checkbox"]').addClass('.checkbox')
+    }
+
+    if ($('input[type="radio"]').length) {
+        $('input[type="radio"]').addClass('.radio')
     }
 
     $('[data-toggle="tooltip"]').tooltip()
