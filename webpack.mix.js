@@ -10,7 +10,8 @@ let paths = {
         'css': './dist/css/',
         'js': './dist/js/',
         'fonts': './dist/fonts/',
-        'vendor': './dist/vendor/'
+        'vendor': './dist/vendor/',
+        'img': './dist/img/'
     }
 }
 
@@ -28,6 +29,7 @@ mix.combine([
     paths.bowerPath + 'bootstrap-treeview/dist/bootstrap-treeview.min.css',
     paths.bowerPath + 'select2-to-tree/src/select2totree.css',
     paths.bowerPath + 'toastr/toastr.min.css',
+    paths.bowerPath + 'x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css',
     paths.webDev.css + 'skins/_all-skins.min.css',
     paths.webDev.css + 'AdminLTE.min.css',
     paths.webDev.css + 'common.css',
@@ -54,6 +56,7 @@ mix.combine([
     paths.bowerPath + 'bootstrap-treeview/dist/bootstrap-treeview.min.js',
     paths.bowerPath + 'select2-to-tree/src/select2totree.js',
     paths.bowerPath + 'toastr/toastr.min.js',
+    paths.bowerPath + 'x-editable/dist/bootstrap3-editable/js/bootstrap-editable.js',
     paths.webDev.js + 'adminlte.min.js',
 ], paths.webProd.js + 'its-plugins.js', false)
 
@@ -62,6 +65,7 @@ mix.copyDirectory(paths.bowerPath + 'font-awesome/fonts', paths.webProd.fonts);
 mix.copyDirectory(paths.bowerPath + 'Ionicons/fonts', paths.webProd.fonts);
 mix.copyDirectory(paths.bowerPath + 'bootstrap/fonts', paths.webProd.fonts);
 mix.copyDirectory(paths.bowerPath + 'ckeditor', paths.webProd.vendor + 'ckeditor');
+mix.copyDirectory(paths.bowerPath + 'x-editable/dist/bootstrap3-editable/img', paths.webProd.img);
 
 if (mix.inProduction()) {
     /* Minify assets */
