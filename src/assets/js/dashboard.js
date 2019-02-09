@@ -137,24 +137,28 @@ $(function () {
         }
     })
 
-    $('.select2:not(.field-select-ajax):not(.sortable)').select2({
-      language: 'ru',
-      tags: false
-    })
+    if ($('.select2:not(.field-select-ajax):not(.sortable)').length) {
+        $('.select2:not(.field-select-ajax):not(.sortable)').select2({
+            language: 'ru',
+            tags: false
+        })
+    }
 
-    $('.select2.sortable').select2({
-      language: 'ru',
-      tags: true
-    })
+    if ($('.select2.sortable').length) {
+        $('.select2.sortable').select2({
+        language: 'ru',
+        tags: true
+        })
 
-    $('.select2.sortable').on("select2:select", function (evt) {
-      var element = evt.params.data.element
-      var $element = $(element)
+        $('.select2.sortable').on("select2:select", function (evt) {
+            var element = evt.params.data.element
+            var $element = $(element)
 
-      $element.detach()
-      $(this).append($element)
-      $(this).trigger("change")
-    })
+            $element.detach()
+            $(this).append($element)
+            $(this).trigger("change")
+        })
+    }
 
     if($('.select2.field-select-ajax').length) {
       $('.select2.field-select-ajax').each(function (index) {
@@ -227,16 +231,16 @@ $(function () {
 
     if ($('input[type="checkbox"].minimal').length && $('input[type="radio"].minimal').length) {
         $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-        checkboxClass: 'icheckbox_minimal-blue',
-        radioClass   : 'iradio_minimal-blue'
+            checkboxClass: 'icheckbox_minimal-blue',
+            radioClass   : 'iradio_minimal-blue'
         })
         $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-        checkboxClass: 'icheckbox_minimal-red',
-        radioClass   : 'iradio_minimal-red'
+            checkboxClass: 'icheckbox_minimal-red',
+            radioClass   : 'iradio_minimal-red'
         })
         $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-        checkboxClass: 'icheckbox_flat-green',
-        radioClass   : 'iradio_flat-green'
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass   : 'iradio_flat-green'
         })
     }
 
