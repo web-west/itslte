@@ -333,6 +333,9 @@ $(function () {
         hideHover : 'auto'
       })
     }
+    if ($('textarea.ck-editor.ck-mini').length) {
+        $('textarea.ck-editor.ck-mini').ckeditor(ckMini || {})
+    }
     if ($('textarea.ck-editor.ck-small').length) {
         $('textarea.ck-editor.ck-small').ckeditor(ckSmall || {})
     }
