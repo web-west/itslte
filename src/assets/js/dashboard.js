@@ -235,22 +235,23 @@ $(function () {
 
     $('[data-toggle="tooltip"]').tooltip()
 
+      // .edit-entity-in-modal  =>  .js-fill-fields-modal
+      // .data-entity           =>  .data-fields
+      $('.js-fill-fields-modal').on('click', function() {
+          var $this = $(this),
+              url = $this.data('url'),
+              dataFields = $this.data('fields'),
+              modal = $($this.data('target'))
 
-    $('.edit-entity-in-modal').on('click', function() {
-      var $this = $(this),
-          url = $this.data('url'),
-          entity = $this.data('entity')
+          if (url) {
+              modal.find('form').attr('action', url)
+          }
+          for (var field in dataFields) {
+              modal.find('[name="' + field + '"]').val(dataFields[field]);
+          }
 
-        if (url) {
-            $($this.data('target')).find('form').attr('action', url)
-        }
-
-        for (var field in entity) {
-          $($this.data('target')).find('[name="' + field + '"]').val(entity[field]);
-      }
-
-      $($this.data('target')).modal('show')
-    })
+          modal.modal() // Bootstrap!
+      })
 
     var treeSortable = {}
 
