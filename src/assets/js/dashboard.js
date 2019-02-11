@@ -233,14 +233,6 @@ $(function () {
       })
     })
 
-    if ($('input[type="checkbox"]').length) {
-        $('input[type="checkbox"]').addClass('checkbox')
-    }
-
-    if ($('input[type="radio"]').length) {
-        $('input[type="radio"]').addClass('radio')
-    }
-
     $('[data-toggle="tooltip"]').tooltip()
 
 
