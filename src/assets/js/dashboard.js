@@ -237,7 +237,8 @@ $(function () {
 
       // .edit-entity-in-modal  =>  .js-fill-fields-modal
       // .data-entity           =>  .data-fields
-      $('.js-fill-fields-modal').on('click', function() {
+      $('.js-fill-fields-modal').on('click', function(e) {
+          e.preventDefault()
           var $this = $(this),
               url = $this.data('url'),
               dataFields = $this.data('fields'),
