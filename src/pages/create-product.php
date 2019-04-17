@@ -48,6 +48,10 @@
                                     <textarea rows="10" cols="80" class="form-control ck-editor ck-full" placeholder="Приклад: Опис про яблуко"></textarea>
                                 </div>
                                 <div class="form-group">
+                                    <label for="demo-colorpicker">Цвет</label>
+                                    <input id="demo-colorpicker" type="text" class="form-control" value="rgb(255, 128, 0)" />
+                                </div>
+                                <div class="form-group">
                                     <?php require '../includes/field-tree.php';?>
                                 </div>
                             </div>

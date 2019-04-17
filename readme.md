@@ -126,6 +126,18 @@ if (process.env.section) {
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
+
+<script>
+    $(function () {
+        // Basic instantiation:
+        $('#demo-colorpicker').colorpicker();
+
+        // Example using an event, to change the color of the .jumbotron background:
+        $('#demo-colorpicker').on('colorpickerChange', function(event) {
+            $('.jumbotron').css('background-color', event.color.toString());
+        });
+    });
+</script>
 ```
 
 Используем примеры с папки ```src```
