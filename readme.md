@@ -124,10 +124,8 @@ if (process.env.section) {
 <script src="{{ asset('its-lte/js/its-admin.js') }}"></script>
 
 <script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
+    $.widget.bridge('uibutton', $.ui.button);
 
-<script>
     $(function () {
         // Basic instantiation:
         $('#demo-colorpicker').colorpicker();
@@ -137,6 +135,9 @@ if (process.env.section) {
             $('.jumbotron').css('background-color', event.color.toString());
         });
     });
+    
+    $('#datetimepicker').datetimepicker();
+    
 </script>
 ```
 

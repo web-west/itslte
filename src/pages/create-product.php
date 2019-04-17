@@ -51,6 +51,12 @@
                                     <label for="demo-colorpicker">Цвет</label>
                                     <input id="demo-colorpicker" type="text" class="form-control" value="rgb(255, 128, 0)" />
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="datetimepicker">Дата созадния</label>
+                                    <input id="datetimepicker" type="text" class="form-control" value="" />
+                                </div>
+
                                 <div class="form-group">
                                     <?php require '../includes/field-tree.php';?>
                                 </div>

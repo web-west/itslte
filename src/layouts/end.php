@@ -86,6 +86,8 @@
 <script src="/dist/js/its-admin.js"></script>
 
 <script>
+    $.widget.bridge('uibutton', $.ui.button);
+
     $(function () {
         // Basic instantiation:
         $('#demo-colorpicker').colorpicker();
@@ -95,10 +97,9 @@
             $('.jumbotron').css('background-color', event.color.toString());
         });
     });
-</script>
 
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
+    $('#datetimepicker').datetimepicker();
+
 </script>
 
 </body>

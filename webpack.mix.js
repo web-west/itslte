@@ -30,6 +30,7 @@ mix.combine([
     paths.bowerPath + 'select2-to-tree/src/select2totree.css',
     paths.bowerPath + 'toastr/toastr.min.css',
     paths.bowerPath + 'x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css',
+    paths.bowerPath + 'datetimepicker/jquery.datetimepicker.css',
     paths.webDev.css + 'skins/_all-skins.min.css',
     paths.webDev.css + 'AdminLTE.min.css',
     paths.webDev.css + 'common.css',
@@ -57,6 +58,7 @@ mix.combine([
     paths.bowerPath + 'select2-to-tree/src/select2totree.js',
     paths.bowerPath + 'toastr/toastr.min.js',
     paths.bowerPath + 'x-editable/dist/bootstrap3-editable/js/bootstrap-editable.js',
+    paths.bowerPath + 'datetimepicker/build/jquery.datetimepicker.full.js',
     paths.webDev.js + 'adminlte.min.js',
 ], paths.webProd.js + 'its-plugins.js', false)
 
