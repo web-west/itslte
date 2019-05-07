@@ -60,6 +60,7 @@ if (process.env.section) {
       },
       ckFull = {
         language: 'ru',
+        extraPlugins: 'youtube',
       },
       chartOrders = {
         data: [
