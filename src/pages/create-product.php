@@ -9,6 +9,9 @@
                 <div class="box-header">
                     <i class="ion ion-clipboard"></i>
                     <h3 class="box-title">Создание</h3>
+                    <div class="box-tools pull-right">
+                        <?php require '../includes/entity-navigation.php';?>
+                    </div>
                 </div>
                 <div class="box-body">
                     <form action="/src/pages/test-request.php" method="post">
