@@ -33,9 +33,12 @@
               <span class="label label-danger">9</span>
             </a>
           </li>
+
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">Alexander Pierce</span>
+                <!--<img src="https://adminlte.io/themes/AdminLTE/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
+                <span class="account-icon"><i class="fa fa-sign-in"></i></span>
+                <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
@@ -49,6 +52,7 @@
               </li>
             </ul>
           </li>
+
         </ul>
       </div>
     </nav>
