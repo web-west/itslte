@@ -377,6 +377,41 @@ $(function () {
       })
     }
 
+    if ($('.field-linear-list').length) {
+        $('.field-linear-list').on('click', '.btn-info', function (e) {
+            e.preventDefault()
+            var n = $(this).parents('.field-linear-list').find('.btn-info').index(this),
+                length = $(this).parents('.field-linear-list').find('.btn-info').length,
+                fieldName = $(this).parents('.field-linear-list').data('field-name'),
+                placeholderValue = $(this).parents('.field-linear-list').data('placeholder-value'),
+                item = '<tr class="item">'
+                    + '<td>'
+                    + '<div class="input-group input-group-md">'
+                    + '<span class="input-group-btn" style="width: 100%">'
+                    + '<input type="text" name="' + fieldName + '[' + (length) + ']" class="form-control" placeholder="' + placeholderValue +' '+ (parseInt(length) + 1) + '">'
+                    + '</span>'
+                    + '<span class="input-group-btn">'
+                    + '<button type="button" class="btn btn-info btn-flat">'
+                    + '<i class="fa fa-plus"></i>'
+                    + '</button>'
+                    + '<button type="button" class="btn btn-danger btn-flat">'
+                    + '<i class="fa fa-remove"></i>'
+                    + '</button>'
+                    + '</span>'
+                    + '</div>'
+                    + '</td>'
+                    + '</tr>"'
+            $(this).parents('.field-linear-list').find('.item').eq(n).after(item)
+        })
+
+        $('.field-linear-list').on('click', '.btn-danger', function (e) {
+            e.preventDefault()
+            var n = $(this).parents('.field-linear-list').find('.btn-danger:not(.first)').index(this)
+
+            $(this).parents('.field-linear-list').find('.item').eq(n).remove()
+        })
+    }
+
     if($('.field-more-items-sortable').length) {
       $('.field-more-items-sortable .todo-list').sortable({
         handle: '.handle',
