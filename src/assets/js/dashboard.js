@@ -142,13 +142,15 @@ $(function () {
         }
 
         if ($('.field-colorpicker').length) {
-            $('.field-colorpicker').colorpicker();
+            $('.field-colorpicker').colorpicker(colorpickerOptions || {});
         }
 
         if ($('.field-datetimepicker').length) {
-            $('.field-datetimepicker').datetimepicker();
+            $('.field-datetimepicker').datetimepicker(datetimepickerOptions || {});
         }
-
+        if ($('.field-datepicker').length) {
+            $('.field-datepicker').datetimepicker(datepickerOptions || {});
+        }
 
         $('.js-delete-action').on('click', function (e) {
             e.preventDefault()

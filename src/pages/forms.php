@@ -31,6 +31,7 @@
               <?php require '../includes/field-linear-list.php';?>
               <?php require '../includes/field-colorpicker.php';?>
               <?php require '../includes/field-datetimepicker.php';?>
+              <?php require '../includes/field-datepicker.php';?>
               <?php require '../includes/field-images-sortable.php';?>
               <?php require '../includes/change-options.php';?>
 

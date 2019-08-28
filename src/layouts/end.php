@@ -48,7 +48,6 @@
             ],
             labels: ['Нові', 'Підтверджені']
         },
-        xEditable = {},
         translates = {
             localeDateRangePicker: {
                 "format": "MM/DD/YYYY",
@@ -84,6 +83,13 @@
                 ],
                 "firstDay": 1
             }
+        },
+        xEditable = {},
+        colorpickerOptions = {},
+        datetimepickerOptions = {},
+        datepickerOptions = {
+            timepicker:false,
+            format:'d.m.Y'
         }
 </script>
 

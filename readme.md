@@ -79,7 +79,6 @@ if (process.env.section) {
         ],
         labels: ['Нові', 'Підтверджені']
       },
-      xEditable = {},
       translates = {
         localeDateRangePicker: {
           "format": "MM/DD/YYYY",
@@ -115,6 +114,13 @@ if (process.env.section) {
           ],
           "firstDay": 1
         }
+      },
+      xEditable = {},
+      colorpickerOptions = {},
+      datetimepickerOptions = {},
+      datepickerOptions = {
+          timepicker:false,
+          format:'d.m.Y'
       }
 </script>
 
